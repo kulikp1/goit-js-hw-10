@@ -21,6 +21,7 @@ startBtn.disabled = true;
 flatpickr(datetimePicker, {
   enableTime: true,
   time_24hr: true,
+  defaultDate: new Date(),
   minuteIncrement: 1,
   onClose: function(selectedDates) {
     if (selectedDates[0] > new Date()) {
@@ -32,6 +33,8 @@ flatpickr(datetimePicker, {
 });
     } else {
       startBtn.disabled = true; 
+      clearTimer();
+
       iziToast.error({
         title: '',
         message: 'Будь ласка, обери дату в майбутньому',
@@ -39,7 +42,14 @@ flatpickr(datetimePicker, {
     }
   },
 });
-
+// функція для скидання значень таймера, якщо обрана дата в минулому
+function clearTimer() {
+  clearInterval(countdownInterval);
+  days.textContent = '00';
+  hours.textContent = '00';
+  minutes.textContent = '00';
+  seconds.textContent = '00';
+}
 // Функція підрахунку часу до кінцевої дати
 function calculateTimeRemaining() {
   const now = new Date().getTime();
@@ -82,3 +92,4 @@ startBtn.addEventListener('click', function() {
   countdownInterval = setInterval(calculateTimeRemaining, 1000); 
   startBtn.disabled = true; 
 });
+
