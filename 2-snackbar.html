@@ -8,14 +8,46 @@
 
     
     <script type="module" crossorigin src="/goit-js-hw-10/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/styles-3c4e11fa.js">
-    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-d3b5fc92.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/styles-b49c3333.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-77e16229.js">
+    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-7d20b93b.css">
+    <link rel="stylesheet" href="/goit-js-hw-10/assets/vendor-7a007824.css">
   </head>
   <body>
-    <section>
-      <a href="./index.html">Go to home</a>
-      <h1>Welcome to page 3</h1>
-    </section>
+    <div class="wrapper">
+      <form class="form">
+        <label class="form-label">
+          Delay (ms)
+          <input class="form-input" type="number" name="delay" required />
+        </label>
+
+        <fieldset class="fieldset">
+          <legend>State</legend>
+          <label>
+            <input
+              class="fieldset-input"
+              type="radio"
+              name="state"
+              value="fulfilled"
+              required
+            />
+            Fulfilled
+          </label>
+          <label>
+            <input
+              class="fieldset-input"
+              type="radio"
+              name="state"
+              value="rejected"
+              required
+            />
+            Rejected
+          </label>
+        </fieldset>
+
+        <button class="create-btn" type="submit">Create notification</button>
+      </form>
+    </div>
     
   </body>
 </html>
